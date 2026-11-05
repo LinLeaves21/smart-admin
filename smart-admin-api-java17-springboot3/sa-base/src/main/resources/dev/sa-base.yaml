@@ -100,7 +100,7 @@ file:
     mode: local
     local:
       upload-path: /home/smart_admin_v3/upload/   #文件上传目录
-      url-prefix:
+      url-prefix: /upload/   # 使用相对路径，通过前端同源代理访问
     cloud:
       region: oss-cn-hangzhou
       endpoint: https://oss-cn-hangzhou.aliyuncs.com

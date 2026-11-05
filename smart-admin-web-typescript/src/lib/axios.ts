@@ -21,7 +21,8 @@ const TOKEN_HEADER = 'Authorization';
 
 // 创建axios对象
 const smartAxios = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL,
+  // 开发环境走 Vite 代理，浏览器只看到前端域名；生产环境直连配置的 API 地址
+  baseURL: import.meta.env.DEV ? '/api' : import.meta.env.VITE_APP_API_URL,
 });
 
 // 退出系统

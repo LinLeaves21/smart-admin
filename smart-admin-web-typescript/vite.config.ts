@@ -17,7 +17,8 @@ const pathResolve = (dir) => {
 };
 
 export default ({ mode }) => {
-  const env = loadEnv(mode, process.cwd());
+  // 加载全部变量（含无 VITE_ 前缀的代理目标），代理配置只在 Node 侧使用
+  const env = loadEnv(mode, process.cwd(), '');
   return {
     base: process.env.NODE_ENV === 'production' ? '/' : '/',
     root: process.cwd(),
@@ -42,14 +43,17 @@ export default ({ mode }) => {
     server: {
       host: '0.0.0.0',
       port: 8081,
-      server: {
-        proxy: {
-          // 代理路径
-          '/': {
-            target: env.VITE_APP_API_URL, // 目标服务器地址
-            changeOrigin: true, // 是否修改请求头中的 Origin 字段
-            rewrite: (path) => path, // 重写路径
-          },
+      proxy: {
+        // 接口请求：/api/xxx -> 后端 /xxx
+        '/api': {
+          target: env.API_PROXY_TARGET || env.VITE_APP_API_URL, // 目标服务器地址
+          changeOrigin: true, // 是否修改请求头中的 Origin 字段
+          rewrite: (path) => path.replace(/^\/api/, ''), // 去掉 /api 前缀
+        },
+        // 上传文件、头像等静态资源
+        '/upload': {
+          target: env.API_PROXY_TARGET || env.VITE_APP_API_URL,
+          changeOrigin: true,
         },
       },
     },
