@@ -1,9 +1,5 @@
 /*
  * @Description:
- * @Author: zhuoda
- * @Date: 2021-11-05
- * @LastEditTime: 2022-07-05
- * @LastEditors: zhuoda
  */
 module.exports = {
   root: true, //此项是用来告诉eslint找当前配置文件不能往父级查找

@@ -1,11 +1,5 @@
 <!--
   * 商品列表
-  *
-  * @Author:    1024创新实验室-主任：卓大
-  * @Date:      2022-07-21 21:55:12
-  * @Wechat:    zhuda1024
-  * @Email:     lab1024@163.com
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
 -->
 <template>
   <!---------- 查询表单form begin ----------->
@@ -157,9 +151,6 @@
 
     <a-modal v-model:open="importModalShowFlag" title="导入" @onCancel="hideImportModal" @ok="hideImportModal">
       <div style="text-align: center; width: 400px; margin: 0 auto">
-        <a-button @click="downloadExcel"> <download-outlined />第一步：下载模板</a-button>
-        <br />
-        <br />
         <a-upload
           v-model:fileList="fileList"
           name="file"
@@ -171,14 +162,14 @@
         >
           <a-button>
             <upload-outlined />
-            第二步：选择文件
+            第一步：选择文件
           </a-button>
         </a-upload>
 
         <br />
         <a-button @click="onImportGoods">
           <ImportOutlined />
-          第三步：开始导入
+          第二步：开始导入
         </a-button>
       </div>
     </a-modal>
@@ -445,10 +436,6 @@
   function beforeUpload(file) {
     fileList.value = [...(fileList.value || []), file];
     return false;
-  }
-
-  function downloadExcel() {
-    window.open('https://smartadmin.vip/cdn/%E5%95%86%E5%93%81%E6%A8%A1%E6%9D%BF.xls');
   }
 
   async function onImportGoods() {

@@ -4,9 +4,9 @@
     <view class="view-item">
       <view class="title">
         <view class="title-icon-text" type="default"> 提 </view>
-        <view class="title-content"> 河南省洛阳市洛龙区龙门石窟</view>
+        <view class="title-content"> 示例省示例市示例区示例景点</view>
       </view>
-      <view class="sub-title"> 河南省洛阳市洛龙区开元大道1024号1024大厦10层1024室 </view>
+      <view class="sub-title"> 示例省示例市示例区示例大道1号示例大厦10层 </view>
       <view class="sub-title"> 2023-11-23 12:12:12，快递员：刘备（188123123123）</view>
     </view>
     <view class="view-item">
@@ -14,22 +14,22 @@
         <view class="title-icon-text" type="warning"> 装 </view>
         <view class="title-content"> 山东省济南市高新区齐鲁软件园 </view>
       </view>
-      <view class="sub-title"> 山东省济南市高新区六边形大楼10层</view>
-      <view class="sub-title"> 快递员：卓大 188123123123</view>
+      <view class="sub-title"> 山东省济南市高新区示例大楼10层</view>
+      <view class="sub-title"> 快递员：张三 188123123123</view>
     </view>
     <view class="view-item">
       <view class="title">
         <view class="title-icon-text" type="error"> 卸 </view>
-        <view class="title-content"> 河南省郑州市郑东新区龙子湖大厦 </view>
+        <view class="title-content"> 示例省示例市示例区示例大厦 </view>
       </view>
-      <view class="sub-title"> 河南省郑州市郑东新区高铁路120号 </view>
+      <view class="sub-title"> 示例省示例市示例区示例路120号 </view>
     </view>
     <view class="view-item">
       <view class="title">
         <view class="title-icon-text" type="success"> 还 </view>
-        <view class="title-content"> 河南省洛阳市洛龙区白马寺 （胡克） </view>
+        <view class="title-content"> 示例省示例市示例区示例地点（演示员工B） </view>
       </view>
-      <view class="sub-title"> 河南省洛阳市洛龙区119号 </view>
+      <view class="sub-title"> 示例省示例市示例区119号 </view>
     </view>
   </view>
 </template>

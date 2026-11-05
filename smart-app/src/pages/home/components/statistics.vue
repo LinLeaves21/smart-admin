@@ -17,7 +17,7 @@
       </view>
       <view class="view-item">
         <view class="item-bottom-top"> 本月新增客户 </view>
-        <view class="item-bottom-bottom">+1024 </view>
+        <view class="item-bottom-bottom">+128 </view>
       </view>
       <view class="view-item">
         <view class="item-bottom-top"> 本月累计通话 </view>

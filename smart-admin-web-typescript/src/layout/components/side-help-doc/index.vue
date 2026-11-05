@@ -1,11 +1,5 @@
 <!--
   *  帮助文档
-  *
-  * @Author:    1024创新实验室-主任：卓大
-  * @Date:      2022-09-06 20:40:16
-  * @Wechat:    zhuda1024
-  * @Email:     lab1024@163.com
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
 -->
 <template>
   <div class="help-doc-wrapper">
@@ -14,19 +8,6 @@
       <strong>帮助文档</strong>
       <strong class="help-doc-close" @click="hideHelpDoc"><close-outlined /></strong>
     </div>
-
-    <!-----联系客服区域---->
-    <div class="help-doc-contact" @click="contactModal.show">
-      <div class="help-doc-contact-left">
-        <phone-outlined style="font-size: 23px; line-height: 50px; margin-top: 5px" />
-      </div>
-      <div class="help-doc-contact-right">
-        <a>联系客服</a>
-        <div class="help-doc-contac-time">9:00-17:00 5x7小时</div>
-      </div>
-    </div>
-
-    <a-divider />
 
     <!-----意见反馈---->
     <div class="feedback">
@@ -49,8 +30,6 @@
       </div>
     </div>
 
-    <!-----联系客服---->
-    <ContactModal ref="contactModal" />
     <!----- 提交意见反馈 ---->
     <FeedbackModal ref="feedbackModal" />
   </div>
@@ -60,7 +39,6 @@
   import { useRoute } from 'vue-router';
   import _ from 'lodash';
   import { helpDocApi } from '/@/api/support/help-doc-api';
-  import ContactModal from './components/contact-modal.vue';
   import FeedbackModal from './components/feedback-modal.vue';
   import { useAppConfigStore } from '/@/store/modules/system/app-config';
   import { feedbackApi } from '/@/api/support/feedback-api';
@@ -70,9 +48,6 @@
   function hideHelpDoc() {
     useAppConfigStore().hideHelpDoc();
   }
-
-  // ------------------ 联系客服 --------------------------
-  const contactModal = ref();
 
   // ------------------ 意见反馈 --------------------------
   let feedbackMessageList = ref([]);
@@ -176,27 +151,6 @@
 
       .help-doc-close {
         cursor: pointer;
-      }
-    }
-
-    .help-doc-contact {
-      height: 50px;
-      display: flex;
-      cursor: pointer;
-      margin-top: 5px;
-      justify-content: space-between;
-      .help-doc-contact-left {
-        width: 30px;
-        margin-top: 10px;
-      }
-      .help-doc-contact-right {
-        margin-top: 10px;
-        width: calc(100% - 40px);
-        .help-doc-contac-time {
-          color: #888;
-          font-size: 12px;
-          margin-top: 10px;
-        }
       }
     }
 

@@ -1,7 +1,5 @@
 <!--
   * JOB 表单
-  * @Author:    huke
-  * @Date:      2024/06/29
 -->
 <template>
   <div>
@@ -35,7 +33,7 @@
           <a-textarea
               :auto-size="{ minRows: 2, maxRows: 4 }"
               v-model:value="updateForm.jobClass"
-              placeholder="示例：net.lab1024.sa.base.module.support.job.sample.SmartJobSample1"
+              placeholder="示例：com.smartadmin.base.module.support.job.sample.SmartJobSample1"
               :maxlength="200"
               :showCount="true"
           />

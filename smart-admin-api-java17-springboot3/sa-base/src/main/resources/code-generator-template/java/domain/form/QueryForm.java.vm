@@ -1,16 +1,12 @@
 package ${packageName};
 
-import net.lab1024.sa.base.common.domain.PageParam;
+import com.smartadmin.base.common.domain.PageParam;
 #foreach ($importClass in $importPackageList)
 $importClass
 #end
 
 /**
  * ${basic.description} 分页查询表单
- *
- * @Author ${basic.backendAuthor}
- * @Date ${basic.backendDate}
- * @Copyright ${basic.copyright}
  */
 
 @Data

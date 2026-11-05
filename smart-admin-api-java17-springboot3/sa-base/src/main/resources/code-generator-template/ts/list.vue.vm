@@ -1,9 +1,5 @@
 <!--
   * ${basic.description}
-  *
-  * @Author:    ${basic.frontAuthor}
-  * @Date:      ${basic.frontDate}
-  * @Copyright  ${basic.copyright}
 -->
 <template>
     <!---------- 查询表单form begin ----------->

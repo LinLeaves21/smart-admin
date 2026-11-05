@@ -38,7 +38,7 @@ function stringToHex(str) {
  *
  * -------------------- ※ AES 加密、解密 end ※ --------------------
  */
-const AES_KEY = '1024lab__1024lab';
+const AES_KEY = 'DefaultCryptoKey';
 
 const AES = {
   encryptData: function (data) {
@@ -77,7 +77,7 @@ const AES = {
  */
 
 // 秘钥Key 组成为：字母、数字、特殊符号 一共16个即可
-const SM4_KEY = '1024lab__1024lab';
+const SM4_KEY = 'DefaultCryptoKey';
 
 const SM4 = {
   encryptData: function (data) {
@@ -96,7 +96,6 @@ const SM4 = {
     return CryptoSM.sm4.decrypt(decode64Str, stringToHex(SM4_KEY));
   },
 };
-
 
 
 // -----------------------  对外暴露： 加密、解密 -----------------------

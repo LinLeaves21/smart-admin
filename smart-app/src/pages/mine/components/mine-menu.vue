@@ -23,7 +23,7 @@
             <image class="icon" src="/static/images/mine/mine-service.png" mode=""></image>
           </template>
           <template #footer>
-            <view style="font-size: 30rpx; color: #1a9aff; line-height: 45rpx"> 18810241024 </view>
+            <view style="font-size: 30rpx; color: #1a9aff; line-height: 45rpx"> 13800000000 </view>
           </template>
         </uni-list-item>
         <uni-list-item title="账号管理" showBadge link>
@@ -84,7 +84,7 @@
 
   function callService() {
     uni.makePhoneCall({
-      phoneNumber: '18637925892',
+      phoneNumber: '13800000000',
     });
   }
 </script>

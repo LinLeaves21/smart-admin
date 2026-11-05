@@ -3,10 +3,10 @@ package ${packageName};
 #foreach ($importClass in $importPackageList)
 $importClass
 #end
-import net.lab1024.sa.base.common.util.SmartBeanUtil;
-import net.lab1024.sa.base.common.util.SmartPageUtil;
-import net.lab1024.sa.base.common.domain.ResponseDTO;
-import net.lab1024.sa.base.common.domain.PageResult;
+import com.smartadmin.base.common.util.SmartBeanUtil;
+import com.smartadmin.base.common.util.SmartPageUtil;
+import com.smartadmin.base.common.domain.ResponseDTO;
+import com.smartadmin.base.common.domain.PageResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
@@ -15,10 +15,6 @@ import jakarta.annotation.Resource;
 
 /**
  * ${basic.description} Service
- *
- * @Author ${basic.backendAuthor}
- * @Date ${basic.backendDate}
- * @Copyright ${basic.copyright}
  */
 
 @Service
@@ -48,7 +44,6 @@ public class ${name.upperCamel}Service {
 
     /**
      * 更新
-     *
      */
     public ResponseDTO<String> update(${name.upperCamel}UpdateForm updateForm) {
         ${name.upperCamel}Entity ${name.lowerCamel}Entity = SmartBeanUtil.copy(updateForm, ${name.upperCamel}Entity.class);

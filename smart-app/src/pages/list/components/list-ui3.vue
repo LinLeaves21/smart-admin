@@ -18,11 +18,11 @@
           <view class="item-center-address">
             <view class="m-b-16">
               <view class="item-title"> 装货地址 </view>
-              <view class="item-address"> 河南省洛阳市洛龙区110号 </view>
+              <view class="item-address"> 示例省示例市示例区110号 </view>
             </view>
             <view class="m-b-16">
               <view class="item-title"> 卸货地址 </view>
-              <view class="item-address"> 河南省洛阳市西工区120号 </view>
+              <view class="item-address"> 示例省示例市示例区120号 </view>
             </view>
           </view>
         </view>
@@ -64,11 +64,11 @@
           <view class="item-center-address">
             <view class="m-b-16">
               <view class="item-title"> 装货地址 </view>
-              <view class="item-address"> 河南省洛阳市洛龙区110号 </view>
+              <view class="item-address"> 示例省示例市示例区110号 </view>
             </view>
             <view class="m-b-16">
               <view class="item-title"> 卸货地址 </view>
-              <view class="item-address"> 河南省洛阳市西工区120号 </view>
+              <view class="item-address"> 示例省示例市示例区120号 </view>
             </view>
           </view>
         </view>
@@ -110,11 +110,11 @@
           <view class="item-center-address">
             <view class="m-b-16">
               <view class="item-title"> 装货地址 </view>
-              <view class="item-address"> 河南省洛阳市洛龙区110号 </view>
+              <view class="item-address"> 示例省示例市示例区110号 </view>
             </view>
             <view class="m-b-16">
               <view class="item-title"> 卸货地址 </view>
-              <view class="item-address"> 河南省洛阳市西工区120号 </view>
+              <view class="item-address"> 示例省示例市示例区120号 </view>
             </view>
           </view>
         </view>

@@ -1,4 +1,3 @@
-
 -- ----------------------------
 -- Table structure for t_position
 -- ----------------------------
@@ -25,8 +24,6 @@ INSERT INTO `t_position`(`position_id`, `position_name`, `position_level`, `sort
 INSERT INTO `t_position`(`position_id`, `position_name`, `position_level`, `sort`, `remark`, `deleted_flag`, `create_time`, `update_time`) VALUES (6, '管理M6', 'L2', 5, NULL, 0, '2024-07-15 23:35:00', '2024-07-15 23:35:00');
 
 
-
-
 -- ----------------------------
 -- Table structure for t_operate_log
 -- ----------------------------
@@ -50,5 +47,4 @@ CREATE TABLE `t_operate_log` (
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`operate_log_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4499 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC COMMENT='操作记录';
-
 

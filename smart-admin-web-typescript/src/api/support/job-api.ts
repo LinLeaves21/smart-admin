@@ -1,8 +1,5 @@
 /*
  * job api
- *
- * @Author:    huke
- * @Date:      2024/06/25
  */
 import { postRequest, getRequest } from '/@/lib/axios';
 
@@ -35,7 +32,7 @@ export const jobApi = {
   queryJobLog: (param) => {
     return postRequest('/support/job/log/query', param);
   },
-  // 定时任务-删除  @zhuoda
+  // 定时任务-删除  @demo_user
   deleteJob: (param) => {
     return getRequest(`/support/job/delete?jobId=${param}`);
   },

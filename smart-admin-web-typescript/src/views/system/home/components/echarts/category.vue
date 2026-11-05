@@ -38,7 +38,7 @@
       },
       series: [
         {
-          name: '善逸',
+          name: '演示员工A',
           data: [120, 200, 150, 80, 70, 110, 130],
           type: 'bar',
           backgroundStyle: {
@@ -46,7 +46,7 @@
           },
         },
         {
-          name: '胡克',
+          name: '演示员工B',
           data: [100, 80, 120, 77, 52, 22, 190],
           type: 'bar',
           backgroundStyle: {
@@ -54,7 +54,7 @@
           },
         },
         {
-          name: '开云',
+          name: '演示员工C',
           data: [200, 110, 85, 99, 120, 145, 180],
           type: 'bar',
           backgroundStyle: {
@@ -62,7 +62,7 @@
           },
         },
         {
-          name: '初晓',
+          name: '演示员工J',
           data: [80, 70, 90, 110, 200, 44, 80],
           type: 'bar',
           backgroundStyle: {

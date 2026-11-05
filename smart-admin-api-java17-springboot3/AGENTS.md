@@ -29,8 +29,8 @@ Maven 两个模块，依赖方向只能是 `sa-admin -> sa-base`：
 - `sa-base`：公共基础库。统一响应/异常/分页/工具、数据源与 MyBatis 配置、全局异常、自动填充、启动监听器，以及可复用的 support 业务域（文件、字典、消息、定时任务、代码生成、三级等保等）。没有启动类。
 - `sa-admin`：可执行应用。登录、员工、部门、角色、菜单、职务、数据权限、admin 侧 support Controller，以及示例业务（分类/商品/OA）。
 
-启动类：`sa-admin/src/main/java/net/lab1024/sa/admin/AdminApplication.java`
-- `@ComponentScan("net.lab1024.sa")`
+启动类：`sa-admin/src/main/java/com/smartadmin/admin/AdminApplication.java`
+- `@ComponentScan("com.smartadmin")`
 - `@MapperScan(annotationClass = Mapper.class)`：DAO 必须显式加 `@Mapper`
 - 排除了 `UserDetailsServiceAutoConfiguration`，项目不用 Spring Security 登录，只用 `spring-security-crypto` 做 Argon2 密码哈希
 
@@ -133,10 +133,10 @@ IDE 直接运行也可能找不到 `application.yaml`，因为配置在 `src/mai
 - `@SaCheckPermission("module:action")`：功能权限。**项目没有默认拒绝机制**，方法不加注解时任何登录用户都能访问；新增 admin 接口必须加注解，并同步在 `t_menu.api_perms` 配置相同字符串。
 - `administratorFlag=true` 的用户直接跳过所有权限校验。
 - loginId 格式是硬约定：普通登录 `userType + ":" + employeeId`，万能密码 `S:<uuid>:<employeeId>`。不要修改用户类型位数或拼接格式。
-- 登录密码必须 SM4 加密后传输，后端 `LoginService` 会无条件 `apiEncryptService.decrypt(password)`。密钥 `1024lab__1024lab`，前后端必须一致。
+- 登录密码必须 SM4 加密后传输，后端 `LoginService` 会无条件 `apiEncryptService.decrypt(password)`。密钥 `DefaultCryptoKey`，前后端必须一致。
 - 当前 `@Service` 注册的是 SM4 实现；AES 实现不是 Bean。切换算法必须同时改前端 `EncryptObject` 和后端 Bean。
 - 密码存储：Argon2id，盐格式 `明文密码_UID大写_UID小写`。修改 `employeeUid` 会导致该员工密码失效。
-- 默认万能密码是 `t_config.super_password = 1024ok`，生产必须修改或移除。
+- 默认万能密码是 `t_config.super_password = ChangeMe_2026!`，生产必须修改或移除。
 - 默认登录账号：`admin / 123456`（种子数据，仅开发环境）。
 
 ## 7. 数据层约定
@@ -187,7 +187,7 @@ IDE 直接运行也可能找不到 `application.yaml`，因为配置在 `src/mai
 
 ## 10. 新增业务模块的标准流程
 
-1. 在 `sa-admin/src/main/java/net/lab1024/sa/admin/module/business/<domain>` 建包；可复用能力放 `sa-base/module/support`。
+1. 在 `sa-admin/src/main/java/com/smartadmin/admin/module/business/<domain>` 建包；可复用能力放 `sa-base/module/support`。
 2. 按 `controller/service/manager/dao/domain` 分层；多表写操作放 Manager 并加事务。
 3. Entity 加 `@TableName("t_xxx")`；DAO 加 `@Mapper`；复杂 SQL 写 XML。
 4. 查询 Form 继承 `PageParam`；Service 用 `SmartPageUtil`。
@@ -213,7 +213,7 @@ IDE 直接运行也可能找不到 `application.yaml`，因为配置在 `src/mai
 11. 不要用 `synchronized` 做跨实例互斥。
 12. 不要提交 `target/`、IDE 配置、日志、上传文件。
 13. 不要新增 `java.util.Date`；日期统一 `LocalDate/LocalDateTime`。
-14. 不要把演示配置（数据库密码、邮箱密码、`super_password=1024ok`）带到生产。
+14. 不要把演示配置（数据库密码、邮箱密码、`super_password=ChangeMe_2026!`）带到生产。
 15. 不要声称“测试通过”而只跑了构建：当前测试类没有 `@Test`，`mvn test` 不验证业务。
 
 ## 12. 验证清单
@@ -240,7 +240,7 @@ curl -s http://127.0.0.1:1024/login/getCaptcha
 
 ## 13. 关键文件索引
 
-- 启动与配置：`sa-admin/src/main/java/net/lab1024/sa/admin/AdminApplication.java`、`pom.xml`、`sa-admin/src/main/resources/dev/application.yaml`、`sa-base/src/main/resources/dev/sa-base.yaml`
+- 启动与配置：`sa-admin/src/main/java/com/smartadmin/admin/AdminApplication.java`、`pom.xml`、`sa-admin/src/main/resources/dev/application.yaml`、`sa-base/src/main/resources/dev/sa-base.yaml`
 - 请求链路：`sa-admin/.../interceptor/AdminInterceptor.java`、`sa-base/.../handler/GlobalExceptionHandler.java`、`sa-base/.../common/domain/ResponseDTO.java`、`sa-base/.../config/UrlConfig.java`
 - 登录与权限：`sa-admin/.../module/system/login/service/LoginService.java`、`sa-admin/.../module/system/login/manager/LoginManager.java`、`sa-base/.../securityprotect/service/SecurityPasswordService.java`
 - 数据层：`sa-base/.../config/DataSourceConfig.java`、`sa-base/.../config/MybatisPlusConfig.java`、`sa-base/.../handler/MybatisPlusFillHandler.java`、`sa-base/.../common/util/SmartPageUtil.java`

@@ -1,9 +1,5 @@
 <!--
   * 接口加密、解密
-  *
-  * @Author:    1024创新实验室-主任-卓大
-  * @Date:      2023-10-17 22:02:37
-  * @Copyright  1024创新实验室
 -->
 <template>
   <a-alert closable>
@@ -16,8 +12,8 @@
 
 - 支持国密SM、AES加密算法。前端修改:/lib/encrypt.js文件，后端：启动 ApiEncryptServiceAesImpl 或者 ApiEncryptServiceSmImpl
 - 前端请看：/lib/encrypt.js、/lib/axios.js  /api/support/api-encrypt/api-encrypt-api.js 等文件
-- 后端请看：@ApiEncrypt 和 @ApiDecrypt 注解，具体请看 sa-common项目中的 net.lab1024.sa.common.module.support.apiencrypt 包
-- demo请看：前端：/views/support/api-encrypt 目录，后端 请看：sa-admin项目的：net.lab1024.sa.admin.module.system.support.AdminApiEncryptController
+- 后端请看：@ApiEncrypt 和 @ApiDecrypt 注解，具体请看 sa-common项目中的 com.smartadmin.common.module.support.apiencrypt 包
+- demo请看：前端：/views/support/api-encrypt 目录，后端 请看：sa-admin项目的：com.smartadmin.admin.module.system.support.AdminApiEncryptController
 </pre
       >
     </template>
@@ -148,7 +144,7 @@
   //请求参数加密
   const requestEncryptForm = reactive({
     age: 100, // 年龄
-    name: '卓大', //姓名
+    name: '张三', //姓名
   });
 
   // 参数字符串
@@ -172,7 +168,7 @@
 
   const responseEncryptForm = reactive({
     age: 100, // 年龄
-    name: '卓大', //姓名
+    name: '张三', //姓名
   });
 
   const responseEncryptFormStr = ref('');
@@ -190,7 +186,7 @@
 
   const form = reactive({
     age: 100, // 年龄
-    name: '卓大', //姓名
+    name: '张三', //姓名
   });
 
   const formStr = ref('');

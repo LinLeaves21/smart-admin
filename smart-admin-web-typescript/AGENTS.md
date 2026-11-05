@@ -58,10 +58,10 @@ npm run build:prod    # 生产构建
 | `.env.localhost` | `npm run localhost` | `API_PROXY_TARGET=http://127.0.0.1:1024` |
 | `.env.development` | `npm run dev` | `API_PROXY_TARGET=http://127.0.0.1:1024` |
 | `.env.test` | `build:test` | `VITE_APP_API_URL=http://127.0.0.1:1024` |
-| `.env.pre` / `.env.production` | 预发/生产构建 | 默认指向演示地址 `https://preview.smartadmin.vip/smart-admin-api` |
+| `.env.pre` / `.env.production` | 预发/生产构建 | 同源反向代理路径 `/smart-admin-api` |
 
 - 只有 `VITE_` 前缀变量会进入浏览器产物，不要把密钥写进 `VITE_*`。
-- `.env.production` / `.env.pre` 的 API 地址是演示环境，真实部署前必须修改。
+- `.env.production` / `.env.pre` 默认使用同源路径，真实部署前需按网关或反向代理配置调整。
 - `build:test` 使用 `--base=/admin/`，部署到子路径时注意资源路径。
 
 ## 4. 目录职责
@@ -102,7 +102,7 @@ src/
 - 路由 `name` 和 `meta.componentName` 都是后端 `menuId` 字符串，不要手工改。
 - `component` 字段是相对 `src/views` 的路径，必须与真实文件完全一致；找不到时页面空白且无显式报错。
 - 隐藏详情页的正确做法：新增 `menu_type=2`、`visible_flag=0` 的菜单，`path` 指向详情路由，`component` 指向详情页。
-- 登录页实际使用的是 `src/views/system/login3/login.vue`；`login/`、`login2/` 是历史版本，改它们不生效。
+- 登录页实际使用的是 `src/views/system/login3/login.vue`；旧版 `login/`、`login2/` 已删除。
 - 路由守卫只校验 token，没有页面级权限判断；能访问哪些页面取决于后端返回的菜单。
 
 ### 5.2 按钮权限
@@ -143,7 +143,7 @@ if (res.code && res.code !== 1) { ... }
 
 ### 6.1 加密
 
-- `src/lib/encrypt.ts` 默认 `EncryptObject = SM4`，密钥 `1024lab__1024lab`。
+- `src/lib/encrypt.ts` 默认 `EncryptObject = SM4`，密钥 `DefaultCryptoKey`。
 - 登录密码单独加密：`password: encryptData(loginForm.password)`。
 - 整包加密请求用 `postEncryptRequest`，对应后端 `@ApiDecrypt`；当前业务很少使用。
 - 切换 AES 必须同时改后端 Bean，当前后端只有 SM4 实现带 `@Service`。

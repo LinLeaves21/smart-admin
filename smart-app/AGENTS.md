@@ -132,14 +132,14 @@ if (res.code && res.code !== 1) { ... } else { resolve(res); }
 | `.env.development` | `http://127.0.0.1:1024` | `dev:h5` 默认 |
 | `.env.localhost` | `http://127.0.0.1:1024` | 需手动 `--mode localhost`，无脚本 |
 | `.env.test` | `http://127.0.0.1:1024` | 需 `--mode test`；后端 test 端口是 11024，不一致 |
-| `.env.pre` | `https://app.smartadmin.vip/smart-app-api` | 需 `--mode pre` |
-| `.env.production` | `https://app.smartadmin.vip/smart-app-api` | `build:h5` 默认 |
+| `.env.pre` | `/smart-app-api` | 需 `--mode pre` |
+| `.env.production` | `/smart-app-api` | `build:h5` 默认 |
 
-`VITE_APP_TITLE` 当前没有被使用，`index.html` 的 title 为空。
+`VITE_APP_TITLE` 当前没有被使用，`index.html` 的 title 为空。H5 生产构建默认使用同源路径；打包 App 或小程序时必须改成可访问的完整后端地址。
 
 ### 5.2 加密
 
-- `src/lib/encrypt.js` 默认 `EncryptObject = SM4`，密钥 `1024lab__1024lab`。
+- `src/lib/encrypt.js` 默认 `EncryptObject = SM4`，密钥 `DefaultCryptoKey`。
 - 登录密码单独加密：`password: encryptData(loginForm.password)`。
 - 响应 `dataType === 10` 时自动解密 `data`。
 - 改 key/算法必须同时改后端；后端当前只有 SM4 实现是 `@Service`。

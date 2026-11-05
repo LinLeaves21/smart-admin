@@ -11,19 +11,19 @@
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 客户名称： </view>
-          <view class="item-title"> 六边形工程师 </view>
+          <view class="item-title"> 示例公众号 </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 供应商名称： </view>
-          <view class="item-title"> 1024数字科技有限公司 </view>
+          <view class="item-title"> 示例数字科技有限公司 </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 客户经理： </view>
-          <view class="item-title"> 卓大 </view>
+          <view class="item-title"> 张三 </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 生产厂商： </view>
-          <view class="item-title"> 1024工厂 </view>
+          <view class="item-title"> 示例工厂 </view>
         </view>
       </view>
 
@@ -44,19 +44,19 @@
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 客户名称： </view>
-          <view class="item-title"> 六边形工程师 </view>
+          <view class="item-title"> 示例公众号 </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 供应商名称： </view>
-          <view class="item-title"> 1024数字科技有限公司 </view>
+          <view class="item-title"> 示例数字科技有限公司 </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 客户经理： </view>
-          <view class="item-title"> 卓大 </view>
+          <view class="item-title"> 张三 </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 生产厂商： </view>
-          <view class="item-title"> 1024工厂 </view>
+          <view class="item-title"> 示例工厂 </view>
         </view>
       </view>
 
@@ -81,11 +81,11 @@
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 供应商名称： </view>
-          <view class="item-title"> 1024数字科技有限公司 </view>
+          <view class="item-title"> 示例数字科技有限公司 </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 客户经理： </view>
-          <view class="item-title"> 胡克 </view>
+          <view class="item-title"> 演示员工B </view>
         </view>
         <view class="item-top-item">
           <view class="item-top-label"> 生产厂商： </view>

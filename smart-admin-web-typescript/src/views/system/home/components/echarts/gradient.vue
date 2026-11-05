@@ -27,7 +27,7 @@
         },
       },
       legend: {
-        data: ['罗伊', '佩弦', '开云', '清野', '飞叶'],
+        data: ['演示员工D', '演示员工E', '演示员工C', '演示员工F', '演示员工G'],
       },
       grid: {
         left: '3%',
@@ -49,7 +49,7 @@
       ],
       series: [
         {
-          name: '罗伊',
+          name: '演示员工D',
           type: 'line',
           stack: 'Total',
           smooth: true,
@@ -76,7 +76,7 @@
           data: [140, 232, 101, 264, 90, 340, 250],
         },
         {
-          name: '佩弦',
+          name: '演示员工E',
           type: 'line',
           stack: 'Total',
           smooth: true,
@@ -103,7 +103,7 @@
           data: [120, 282, 111, 234, 220, 340, 310],
         },
         {
-          name: '开云',
+          name: '演示员工C',
           type: 'line',
           stack: 'Total',
           smooth: true,
@@ -130,7 +130,7 @@
           data: [320, 132, 201, 334, 190, 130, 220],
         },
         {
-          name: '清野',
+          name: '演示员工F',
           type: 'line',
           stack: 'Total',
           smooth: true,
@@ -157,7 +157,7 @@
           data: [220, 402, 231, 134, 190, 230, 120],
         },
         {
-          name: '飞叶',
+          name: '演示员工G',
           type: 'line',
           stack: 'Total',
           smooth: true,

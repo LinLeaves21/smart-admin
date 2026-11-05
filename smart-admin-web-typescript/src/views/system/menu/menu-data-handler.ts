@@ -2,12 +2,6 @@
  * 此文件是处理 菜单数据的类，主要用于：
  * 1、菜单树形表格的构造
  * 2、菜单的前端过滤
- *
- * @Author:    1024创新实验室-主任：卓大
- * @Date:      2022-06-15 16:47:20
- * @Wechat:    zhuda1024
- * @Email:     lab1024@163.com
- * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
  */
 
 import _ from 'lodash';

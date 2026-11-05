@@ -1,7 +1,7 @@
 spring:
   # 数据库连接信息
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/smart_admin_v3?autoReconnect=true&useServerPreparedStmts=false&rewriteBatchedStatements=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/smart_admin_v3?autoReconnect=true&useServerPreparedStmts=false&rewriteBatchedStatements=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     username: root
     password: SmartAdmin666
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,11 +14,11 @@ spring:
     filters: stat
     druid:
       username: druid
-      password: 1024
+      password: ChangeMe_2025
       login:
         enabled: false
       method:
-        pointcut: net.lab1024.sa..*Service.*
+        pointcut: com.smartadmin..*Service.*
 
   # redis 连接池配置信息
   data:
@@ -38,8 +38,8 @@ spring:
   mail:
     host: smtp.163.com
     port: 465
-    username: lab1024@163.com
-    password: LAB1024LAB
+    username: your-email@example.com
+    password: change-me
     test-connection: false
     properties:
       mail:
@@ -104,12 +104,12 @@ file:
     cloud:
       region: oss-cn-hangzhou
       endpoint: https://oss-cn-hangzhou.aliyuncs.com
-      bucket-name: 1024lab-smart-admin
+      bucket-name: your-bucket
       access-key:
       secret-key:
       private-url-expire-seconds: 3600
       # 云计算厂商支持公开的文件访问模式；minio默认是不支持的，对于minio用户可以配置为空
-      public-url-prefix: https://1024lab-smart-admin.oss-cn-hangzhou.aliyuncs.com/
+      public-url-prefix: https://your-bucket.oss-cn-hangzhou.aliyuncs.com/
 
 # open api配置
 springdoc:
@@ -125,7 +125,7 @@ knife4j:
   basic:
     enable: false
     username: api # Basic认证用户名
-    password: 1024 # Basic认证密码
+    password: ChangeMe_2025 # Basic认证密码
 
 # RestTemplate 请求配置 毫秒
 http:

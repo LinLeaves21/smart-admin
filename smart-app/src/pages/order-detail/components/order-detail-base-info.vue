@@ -11,7 +11,7 @@
     </view>
     <view class="smart-detail-card-cell">
       <view class="smart-detail-card-label"> 颜色/产地 </view>
-      <view class="smart-detail-card-value">玫瑰金/中国·洛阳 </view>
+      <view class="smart-detail-card-value">玫瑰金/中国·示例市 </view>
     </view>
     <view class="smart-detail-card-cell">
       <view class="smart-detail-card-label"> 材质/电压 </view>

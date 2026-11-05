@@ -1,11 +1,5 @@
 /*
  * 水印
- *
- * @Author:    1024创新实验室-主任：卓大
- * @Date:      2022-09-06 20:50:10
- * @Wechat:    zhuda1024
- * @Email:     lab1024@163.com
- * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
  */
 
 import dayjs from 'dayjs';
@@ -17,7 +11,6 @@ const WATER_MARK_DOM_ID = 'smart_admin_water_mark';
 let smartAdminWaterMarkIntervalId: NodeJS.Timer | null = null;
 
 /**
- *
  * 因为modal的z-index为1000，所以为了modal的黑色背景隐藏掉，z-index为 999
  *
  * @param id

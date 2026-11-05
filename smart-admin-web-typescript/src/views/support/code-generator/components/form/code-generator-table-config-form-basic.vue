@@ -1,11 +1,5 @@
 <!--
   * 代码生成 配置信息
-  *
-  * @Author:    1024创新实验室-主任：卓大
-  * @Date:      2022-09-22 21:50:41
-  * @Wechat:    zhuda1024
-  * @Email:     lab1024@163.com
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
 -->
 <template>
   <a-alert
@@ -77,9 +71,6 @@
 &lt;!--
   * {{ formData.description }}
   *
-  * @Author:     {{ formData.frontAuthor }}
-  * @Date:       {{ formData.frontDate }}
-  * @Copyright   {{ formData.copyright }}
 --&gt;</pre
             >
           </div>
@@ -88,10 +79,6 @@
             <pre class="preview-block">
 /*
  * {{ formData.description }}
- *
- * @Author:     {{ formData.frontAuthor }}
- * @Date:       {{ formData.frontDate }}
- * @Copyright   {{ formData.copyright }}
  */
               </pre
             >
@@ -121,10 +108,6 @@
             <pre class="preview-block">
 /**
  * {{ formData.description }}
- *
- * @Author:     {{ formData.backendAuthor }}
- * @Date:       {{ formData.backendDate }}
- * @Copyright   {{ formData.copyright }}
  */
               </pre
             >

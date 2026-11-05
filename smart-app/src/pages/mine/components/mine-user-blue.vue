@@ -6,7 +6,7 @@
   <!-- 用户信息 -->
   <view class="user-info-box">
     <view class="user-icon">
-      <image src="https://img.smartadmin.1024lab.net/hexagon/logo.png" class="user-image"> </image>
+      <image src="/static/images/login/login-logo.png" class="user-image"> </image>
     </view>
     <view class="user-info">
       <view class="user-name">{{ actualName }}</view>

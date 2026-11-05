@@ -1,9 +1,5 @@
 /**
  * ${basic.description} 枚举
- *
- * @Author:    ${basic.frontAuthor}
- * @Date:      ${basic.frontDate}
- * @Copyright  ${basic.copyright}
  */
 
 #foreach ($enum in $enumList)

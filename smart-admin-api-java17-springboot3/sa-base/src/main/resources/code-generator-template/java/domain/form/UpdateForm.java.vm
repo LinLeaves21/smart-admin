@@ -6,10 +6,6 @@ $importClass
 
 /**
  * ${basic.description} 更新表单
- *
- * @Author ${basic.backendAuthor}
- * @Date ${basic.backendDate}
- * @Copyright ${basic.copyright}
  */
 
 @Data

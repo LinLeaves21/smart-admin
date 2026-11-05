@@ -1,8 +1,4 @@
 <!--
- * @Author: zhuoda
- * @Date: 2021-08-24 16:35:45
- * @LastEditTime: 2022-06-11
- * @LastEditors: zhuoda
  * @Description:
  * @FilePath: /smart-admin/@/views/system/home/components/gauge.vue
 -->

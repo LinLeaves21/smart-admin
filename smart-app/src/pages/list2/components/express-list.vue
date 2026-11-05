@@ -12,7 +12,7 @@
           <view> </view>
         </view>
         <view class="start-address-right">
-          <view class="start-address-text"> 出发地：洛阳市六边形科技园 </view>
+          <view class="start-address-text"> 出发地：示例市示例科技园 </view>
           <view class="start-time"> 出发时间：2023.08.23 </view>
         </view>
       </view>

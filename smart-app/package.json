@@ -1,13 +1,7 @@
 {
   "name": "smart-app",
   "version": "3.0.0",
-  "author": {
-    "name": "1024创新实验室（1024lab）",
-    "email": "lab1024@163.com",
-    "url": "https://www.1024lab.net"
-  },
   "license": "MIT",
-  "homepage": "https://smartadmin.1024lab.net",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",

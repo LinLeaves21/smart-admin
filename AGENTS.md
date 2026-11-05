@@ -8,7 +8,7 @@
 
 ## 1. 仓库定位与组成
 
-SmartAdmin v3（当前代码版本 v3.31）是 1024 创新实验室开源的快速开发平台，包含 PC 管理端、移动端、Java 后端和 MySQL 初始化脚本。
+SmartAdmin v3（当前代码版本 v3.31）是一套前后端分离的后台管理系统，包含 PC 管理端、移动端、Java 后端和 MySQL 初始化脚本。
 
 ```text
 smart-admin/
@@ -156,7 +156,7 @@ ss -ltnp | grep -E ':(1024|8081)\b'
 - PC token 存储 key：`smart_admin_user_token`。
 - 移动端 token 存储 key：`smart_h5_token`。
 - 两端登录态不共享；`sa-token.is-concurrent=false`，同账号新登录会踢掉旧 token。
-- 登录密码必须 SM4 加密后传输，密钥 `1024lab__1024lab`；改一端会导致登录失败。
+- 登录密码必须 SM4 加密后传输，密钥 `DefaultCryptoKey`；改一端会导致登录失败。
 
 ### 5.3 分页
 
@@ -192,10 +192,10 @@ ss -ltnp | grep -E ':(1024|8081)\b'
 2. **PC 前端代理已修正**：原来的 `server.server.proxy` 是错误层级，现已改为 `server.proxy`，并让 axios 在开发环境使用 `/api`。不要改回直连 `http://127.0.0.1:1024`。
 3. **文件 URL 已改为相对路径**：`file.storage.local.url-prefix: /upload/`，避免浏览器暴露后端端口。
 4. **种子头像文件缺失**：`t_employee.avatar` 有值，但图片文件没有随仓库提供，登录后头像可能 404；不是代理问题。
-5. **生产环境 API 地址**：PC 端 `.env.production` / `.env.pre` 默认指向演示环境 `https://preview.smartadmin.vip/smart-admin-api`；移动端指向 `https://app.smartadmin.vip/smart-app-api`。真实部署前必须改。
+5. **生产环境 API 地址**：PC 端 `.env.production` / `.env.pre` 默认使用同源路径 `/smart-admin-api`；移动端默认使用 `/smart-app-api`。真实部署前需按网关或反向代理配置调整。
 6. **移动端与后端存在契约偏差**：字典接口、更新日志字段、企业 logo、商品产地、反馈附件、H5 登录设备值等；详见 `smart-app/AGENTS.md`。
 7. **数据权限未启用**：后端 `@DataScope` 是预埋能力，当前没有业务方法使用，不要假设数据已被隔离。
-8. **万能密码默认开启**：`t_config.super_password = 1024ok`，生产必须修改或移除。
+8. **万能密码默认开启**：`t_config.super_password = ChangeMe_2026!`，生产必须修改或移除。
 9. **本地文件 private 目录不私有**：本地存储的 `/upload/private/**` 可通过 URL 直接访问；真正私有需要云存储预签名。
 10. **测试很少**：后端只有一个没有 `@Test` 的测试类；PC 端和移动端没有测试。构建成功不等于业务正确。
 

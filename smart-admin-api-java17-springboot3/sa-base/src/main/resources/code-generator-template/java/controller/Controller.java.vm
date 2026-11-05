@@ -3,8 +3,8 @@ package ${packageName};
 #foreach ($importClass in $importPackageList)
 $importClass
 #end
-import net.lab1024.sa.base.common.domain.ResponseDTO;
-import net.lab1024.sa.base.common.domain.PageResult;
+import com.smartadmin.base.common.domain.ResponseDTO;
+import com.smartadmin.base.common.domain.PageResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +16,6 @@ import jakarta.validation.Valid;
 
 /**
  * ${basic.description} Controller
- *
- * @Author ${basic.backendAuthor}
- * @Date ${basic.backendDate}
- * @Copyright ${basic.copyright}
  */
 
 @RestController
@@ -29,7 +25,7 @@ public class ${name.upperCamel}Controller {
     @Resource
     private ${name.upperCamel}Service ${name.lowerCamel}Service;
 
-    @Operation(summary = "分页查询 @author ${basic.backendAuthor}")
+    @Operation(summary = "分页查询")
     @PostMapping("/${name.lowerCamel}/queryPage")
     @SaCheckPermission("${name.lowerCamel}:query")
     public ResponseDTO<PageResult<${name.upperCamel}VO>> queryPage(@RequestBody @Valid ${name.upperCamel}QueryForm queryForm) {
@@ -37,14 +33,14 @@ public class ${name.upperCamel}Controller {
     }
 
 #if($insertAndUpdate.isSupportInsertAndUpdate)
-    @Operation(summary = "添加 @author ${basic.backendAuthor}")
+    @Operation(summary = "添加")
     @PostMapping("/${name.lowerCamel}/add")
     @SaCheckPermission("${name.lowerCamel}:add")
     public ResponseDTO<String> add(@RequestBody @Valid ${name.upperCamel}AddForm addForm) {
         return ${name.lowerCamel}Service.add(addForm);
     }
 
-    @Operation(summary = "更新 @author ${basic.backendAuthor}")
+    @Operation(summary = "更新")
     @PostMapping("/${name.lowerCamel}/update")
     @SaCheckPermission("${name.lowerCamel}:update")
     public ResponseDTO<String> update(@RequestBody @Valid ${name.upperCamel}UpdateForm updateForm) {
@@ -54,7 +50,7 @@ public class ${name.upperCamel}Controller {
 
 #if($deleteInfo.isSupportDelete)
     #if($deleteInfo.deleteEnum == "Batch" || $deleteInfo.deleteEnum == "SingleAndBatch")
-    @Operation(summary = "批量删除 @author ${basic.backendAuthor}")
+    @Operation(summary = "批量删除")
     @PostMapping("/${name.lowerCamel}/batchDelete")
     @SaCheckPermission("${name.lowerCamel}:delete")
     public ResponseDTO<String> batchDelete(@RequestBody ValidateList<${primaryKeyJavaType}> idList) {
@@ -63,7 +59,7 @@ public class ${name.upperCamel}Controller {
     #end
 
     #if($deleteInfo.deleteEnum == "Single" || $deleteInfo.deleteEnum == "SingleAndBatch")
-    @Operation(summary = "单个删除 @author ${basic.backendAuthor}")
+    @Operation(summary = "单个删除")
     @GetMapping("/${name.lowerCamel}/delete/{${primaryKeyFieldName}}")
     @SaCheckPermission("${name.lowerCamel}:delete")
     public ResponseDTO<String> batchDelete(@PathVariable ${primaryKeyJavaType} ${primaryKeyFieldName}) {
